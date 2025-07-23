@@ -7,10 +7,10 @@ const botonBuscar = document.getElementById('botonBusqueda');
 
 // Lista de imágenes con su ruta y nombre de categoría
 const imagenesInfo = [
-  { src: "img/img1.png", alt: "CONOCENOS" },
-  { src: "img/papeleria.jpg", alt: "PAPELERIA" },
-  { src: "img/limpieza.jpg", alt: "LIMPIEZA"},
-  { src: "img/img5.jpg.png", alt: "ALIMENTOS Y BEBIDAS" }
+  { src: "img1.png", alt: "CONOCENOS" },
+  { src: "papeleria.jpg", alt: "PAPELERIA" },
+  { src: "limpieza.jpg", alt: "LIMPIEZA"},
+  { src: "img5.jpg.png", alt: "ALIMENTOS Y BEBIDAS" }
 ];
 
 // Variables de control para el carrusel

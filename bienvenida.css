@@ -1,0 +1,237 @@
+/* Aplica a todos los elementos del documento */
+* {
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina padding por defecto */
+  box-sizing: border-box; /* Incluye borde y padding dentro del tamaño total */
+  font-family: sans-serif; /* Fuente general sin adornos */
+}
+
+/* Estilo general del cuerpo del sitio */
+body {
+  background-color: #243cde; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  line-height: 1.5; /* Espaciado entre líneas */
+}
+
+/* Cabecera principal */
+header {
+  background-color: #1e94ca; /* Fondo gris oscuro */
+  padding: 15px 30px; /* Espacio interno superior/inferior y laterales */
+  display: flex; /* Usa Flexbox */
+  align-items: center; /* Alinea verticalmente */
+  justify-content: space-between; /* Espacio entre elementos */
+  flex-wrap: wrap; /* Permite saltar de línea si no cabe */
+}
+
+/* Tamaño del logo */
+.logo {
+  height: 50px; /* Altura del logo */
+}
+
+/* Contenedor del menú de navegación o barra de búsqueda */
+.navegacion {
+  display: flex; /* Flexbox para alinear contenido */
+  flex: 1; /* Ocupa todo el espacio disponible */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+/* Contenedor del input de búsqueda y botón */
+.busqueda {
+  display: flex; /* Coloca input y botón en fila */
+  width: 100%; /* Ocupa todo el ancho */
+  max-width: 600px; /* Máximo ancho */
+  position: relative; /* Posicionamiento relativo para controles */
+}
+
+/* Estilo del input de búsqueda */
+.busqueda input {
+  flex: 1; /* El input ocupa todo el espacio disponible */
+  padding: 10px; /* Espaciado interno */
+  padding-right: 40px; /* Espacio extra a la derecha para el botón */
+  border-radius: 5px 0 0 5px; /* Bordes redondeados a la izquierda */
+  border: none; /* Sin borde */
+  outline: none; /* Sin contorno al enfocar */
+  font-size: 1rem; /* Tamaño del texto */
+}
+
+/* Estilo del botón de búsqueda */
+.busqueda button {
+  background-color: #ff3341e8; /* Rojo semiopaco */
+  padding: 10px 15px; /* Espacio interno */
+  border: none; /* Sin borde */
+  border-radius: 0 5px 5px 0; /* Bordes redondeados a la derecha */
+  color: white; /* Texto blanco */
+  cursor: pointer; /* Cambia a mano al pasar el mouse */
+  transition: 0.2s; /* Transición suave al cambiar */
+}
+
+/* Efecto al hacer clic en el botón (añadido por JS) */
+.busqueda button.clicked {
+  background-color: #ff6670; /* Color más claro */
+  box-shadow: 0 0 8px #ff6670; /* Sombra externa */
+  transform: scale(1.1); /* Ligeramente más grande */
+}
+
+/* Efecto cuando se presiona el botón de búsqueda */
+#botonBusqueda:active {
+  transform: scale(0.95); /* Se achica un poco */
+}
+
+/* Botón genérico reutilizable */
+.btn {
+  padding: 10px 15px; /* Espacio interno */
+  background-color: #ff3344; /* Rojo fuerte */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Manita al pasar */
+  transition: background-color 0.2s; /* Suavidad en hover */
+}
+
+/* Cambio de color cuando el cursor pasa por encima del botón */
+.btn:hover {
+  background-color: #cc0022; /* Rojo más oscuro */
+}
+
+/* Título principal */
+h1 {
+  text-align: center; /* Centrado */
+  margin: 30px auto; /* Margen vertical y horizontal */
+  font-size: 2rem; /* Tamaño del texto */
+  color: #00060b; /* Azul claro */
+}
+
+/* Contenedor del carrusel */
+.carrusel {
+  display: flex; /* Flexbox horizontal */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 20px; /* Espacio entre elementos */
+  margin: 40px auto; /* Margen vertical centrado */
+  max-width: 1000px; /* Ancho máximo */
+  padding: 0 20px; /* Padding lateral */
+}
+
+/* Flechas izquierda y derecha del carrusel */
+.flecha {
+  font-size: 2rem; /* Tamaño grande */
+  cursor: pointer; /* Cursor tipo mano */
+  color: #00060b; /* Azul claro */
+  user-select: none; /* No permite seleccionar texto al dar clic */
+  transition: transform 0.2s; /* Suavidad en agrandado */
+}
+
+/* Efecto al pasar el cursor sobre las flechas */
+.flecha:hover {
+  transform: scale(1.2); /* Aumenta el tamaño */
+  color: #66ccff; /* Azul más claro */
+}
+
+/* Contenedor de imágenes desplazables */
+.galeria {
+  display: flex; /* Flex horizontal */
+  gap: 20px; /* Espacio entre imágenes */
+  overflow: hidden; /* Oculta imágenes fuera del área */
+  width: 750px; /* Ancho fijo */
+  transition: all 0.3s ease-in-out; /* Transición suave al mover */
+}
+
+/* Imagen del carrusel */
+.img {
+  width: 270px; /* Ancho fijo */
+  height: 250px; /* Alto fijo */
+  object-fit: cover; /* Corta y ajusta la imagen al tamaño */
+  border: 4px solid transparent; /* Borde inicial transparente */
+  border-radius: 15px; /* Bordes redondeados */
+  transition: transform 0.3s, border 0.3s; /* Transición suave al resaltar */
+  cursor: pointer; /* Cursor tipo mano */
+}
+
+/* Imagen seleccionada (resaltada) */
+.img.seleccionada {
+  border: 5px solid #1309de; /* Borde azul */
+  box-shadow: 0 0 15px rgba(3, 31, 171, 0.6); /* Sombra azul brillante */
+  transform: scale(1.05); /* Aumenta un poco el tamaño */
+}
+
+/* Contenedor que rodea cada imagen */
+.img-container {
+  text-align: center; /* Centra el contenido */
+  background-color: #1284c6; /* Fondo gris oscuro */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 10px; /* Espacio interno */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* Sombra suave */
+  width: 270px; /* Ancho fijo */
+  transition: transform 0.3s; /* Transición suave */
+}
+
+/* Efecto al pasar el cursor sobre un contenedor de imagen */
+.img-container:hover {
+  transform: translateY(-3px); /* Se eleva ligeramente */
+}
+
+/* Texto debajo de cada imagen */
+.img-container span {
+  display: block; /* Ocupa una línea completa */
+  margin-top: 10px; /* Espacio superior */
+  font-weight: bold; /* Negritas */
+  font-size: 1.1rem; /* Tamaño del texto */
+  color: #f0f0f0; /* Blanco grisáceo */
+}
+
+/* Botón debajo de cada imagen */
+.btn-img {
+  margin-top: 10px; /* Espacio arriba */
+  padding: 8px 12px; /* Espaciado interno */
+  background-color: #ff3333; /* Rojo fuerte */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor tipo mano */
+  transition: 0.2s; /* Suavidad al pasar el mouse */
+}
+
+/* Cambio de color al pasar el cursor por el botón */
+.btn-img:hover {
+  background-color: #cc0000; /* Rojo más oscuro */
+}
+
+/* Estilos para pantallas pequeñas: <= 1000px */
+@media (max-width: 1000px) {
+  .galeria {
+    width: 90%; /* Ancho más flexible */
+    flex-wrap: wrap; /* Las imágenes se colocan en varias líneas */
+    justify-content: center; /* Centra la galería */
+  }
+
+  .img-container {
+    width: 90%; /* Reduce el ancho del contenedor */
+    max-width: 300px; /* Máximo 300px */
+  }
+
+  .img {
+    width: 100%; /* Imagen ocupa todo el contenedor */
+    height: auto; /* Altura automática */
+  }
+}
+
+/* Estilos para pantallas muy pequeñas: <= 600px */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column; /* Elementos uno bajo otro */
+    align-items: flex-start; /* Alineación al inicio */
+  }
+
+  .btn {
+    margin-top: 10px; /* Separación entre botones */
+  }
+
+  .busqueda input {
+    font-size: 0.9rem; /* Reduce tamaño del texto */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Reduce tamaño del título */
+  }
+}

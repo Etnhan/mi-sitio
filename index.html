@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EasyCompra</title>
+
+  <!-- Íconos de FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Hoja de estilos personalizada -->
+  <link rel="stylesheet" href="bienvenida.css" />
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+
+    <!-- Botón de cerrar sesión (visible si el usuario está logueado) -->
+    <a href="php/logout.php" class="btn">Cerrar Sesión</a>
+
+    <!-- Logo del sitio -->
+    <img src="img/img1.png" alt="Logo EasyCompra" class="logo" />
+
+    <!-- Barra de navegación -->
+    <nav class="navegacion">
+      <div class="busqueda">
+        <input type="text" id="inputBusqueda" placeholder="Buscar" />
+        <button id="botonBusqueda"><i class="fas fa-search"></i></button>
+      </div>
+    </nav>
+
+    <!--El botón "Iniciar Sesión" -->
+    <button class="btn" onclick="window.location.href='iniciar sesion.php'">Iniciar Sesión</button>
+  </header>
+
+  <!-- Título de categorías -->
+  <h1>CATEGORÍAS</h1>
+
+  <!-- Carrusel de categorías -->
+  <div class="carrusel">
+    <span class="flecha" id="flechaIzq">&#9664;</span>
+    <div class="galeria" id="galeria"></div>
+    <span class="flecha" id="flechaDer">&#9654;</span>
+  </div>
+
+  <!-- Script para el carrusel y buscador -->
+  <script src="bien.js/bienvenida.js"></script>
+
+</body>
+</html>
